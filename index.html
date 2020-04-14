@@ -9,26 +9,14 @@
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 200px) and (max-device-width: 850px)"
         href="./css/md-public.css">
     <script src="./js/public.js"></script>
+    <script src="./js/jq.min.js"></script>
+    <script src="./component/Public.js"></script>
+    
 </head>
 
 <body>
-    <header class="header-wrap">
-        <div class="header-wrap-inner">
-            <div class="header-inner">
-                <p class="header-item">首页</p>
-                <p class="header-item">关于我们</p>
-                <p class="header-item">讲师介绍</p>
-                <p class="header-item">课程介绍</p>
-                <p class="header-item">联系我们</p>
-            </div>
-            <div class="header-logo">
-                <img src="./img/img1.png" alt="">
-            </div>
-        </div>
-    </header>
-    <section class="section1">
-        <img src="./img/banner.png" alt="" />
-    </section>
+    <div class="headerComponent"></div>
+    <div class="bannerComponent"></div>
     <section class="section2">
         <div class="section2-inner">
             <div class="section2-top">
@@ -43,6 +31,7 @@
                 <p class="section2-bottom-p">让学习中医的人热爱中医</p>
                 <p class="section2-bottom-p">让从事中医的人热爱中医</p>
                 <p class="section2-bottom-p">让中医走进百姓，未全人类的健康服务！</p>
+                <button class="section2-bottom-button">了解更多 ></button>
             </div>
         </div>
 
@@ -93,181 +82,151 @@
         </section>
     </section>
     <section class="section4">
-        <div class="section4-inner evaluate">
-            <div class="section4-inner-item">
-                <div class="section4-inner-item-div1">
-                    <div class="section4-inner-item-div1-left">
-                        <img src="" alt="">
-                    </div>
-                    <div>
-                        <p class="section4-inner-item-div1-right-p">两只小猪</p>
-                        <div style="width: 3rem;display: flex;align-items: center;">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+        <div style="width: 4.73rem;position: absolute;top: 0;left: 0;right: 0;bottom: 0;margin: 0 auto;">
+            <img src="./img/img9.png" style="width: 100%;" alt="">
+        </div>
+        <div class="section4-content">
+            <div class="section4-inner evaluate">
+                <div class="section4-inner-item">
+                    <div class="section4-inner-item-div1">
+                        <div class="section4-inner-item-div1-left">
+                            <img src="" alt="">
+                        </div>
+                        <div style="flex: 1;">
+                            <p class="section4-inner-item-div1-right-p">两只小猪</p>
+                            <div style="width: 2rem;display: flex;align-items: center;">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                            </div>
                         </div>
                     </div>
+                    <p class="section4-inner-item-p1">
+                        好好好整的好。撒娇就是大家安静经济大数据集就到家好好好整的好。撒娇就是大家安静经济大数据集就到家啊计算机就·1啊计算机就·1</p>
+                    <p class="section4-inner-item-p2">[理论课] 第一节：xxxxx</p>
+                    <p class="section4-inner-item-p3">2020 03.09</p>
                 </div>
-                <p class="section4-inner-item-p1">
-                    好好好整的好。撒娇就是大家安静经济大数据集就到家好好好整的好。撒娇就是大家安静经济大数据集就到家啊计算机就·1啊计算机就·1</p>
-                <p class="section4-inner-item-p2">[理论课] 第一节：xxxxx</p>
-                <p class="section4-inner-item-p3">2020 03.09</p>
-            </div>
-            <div class="section4-inner-item">
-                <div class="section4-inner-item-div1">
-                    <div class="section4-inner-item-div1-left">
-                        <img src="" alt="">
-                    </div>
-                    <div>
-                        <p class="section4-inner-item-div1-right-p">两只小猪</p>
-                        <div style="width: 3rem;display: flex;align-items: center;">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                <div class="section4-inner-item">
+                    <div class="section4-inner-item-div1">
+                        <div class="section4-inner-item-div1-left">
+                            <img src="" alt="">
+                        </div>
+                        <div style="flex: 1;">
+                            <p class="section4-inner-item-div1-right-p">两只小猪</p>
+                            <div style="width: 2rem;display: flex;align-items: center;">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                            </div>
                         </div>
                     </div>
+                    <p class="section4-inner-item-p1">
+                        好好好整的好。撒娇就是大家安静经济大数据集就到家好好好整的好。撒娇就是大家安静经济大数据集就到家啊计算机就·1啊计算机就·1</p>
+                    <p class="section4-inner-item-p2">[理论课] 第一节：xxxxx</p>
+                    <p class="section4-inner-item-p3">2020 03.09</p>
                 </div>
-                <p class="section4-inner-item-p1">
-                    好好好整的好。撒娇就是大家安静经济大数据集就到家好好好整的好。撒娇就是大家安静经济大数据集就到家啊计算机就·1啊计算机就·1</p>
-                <p class="section4-inner-item-p2">[理论课] 第一节：xxxxx</p>
-                <p class="section4-inner-item-p3">2020 03.09</p>
-            </div>
-            <div class="section4-inner-item">
-                <div class="section4-inner-item-div1">
-                    <div class="section4-inner-item-div1-left">
-                        <img src="" alt="">
-                    </div>
-                    <div>
-                        <p class="section4-inner-item-div1-right-p">两只小猪</p>
-                        <div style="width: 3rem;display: flex;align-items: center;">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                <div class="section4-inner-item">
+                    <div class="section4-inner-item-div1">
+                        <div class="section4-inner-item-div1-left">
+                            <img src="" alt="">
+                        </div>
+                        <div style="flex: 1;">
+                            <p class="section4-inner-item-div1-right-p">两只小猪</p>
+                            <div style="width: 2rem;display: flex;align-items: center;">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                            </div>
                         </div>
                     </div>
+                    <p class="section4-inner-item-p1">
+                        好好好整的好。撒娇就是大家安静经济大数据集就到家好好好整的好。撒娇就是大家安静经济大数据集就到家啊计算机就·1啊计算机就·1</p>
+                    <p class="section4-inner-item-p2">[理论课] 第一节：xxxxx</p>
+                    <p class="section4-inner-item-p3">2020 03.09</p>
                 </div>
-                <p class="section4-inner-item-p1">
-                    好好好整的好。撒娇就是大家安静经济大数据集就到家好好好整的好。撒娇就是大家安静经济大数据集就到家啊计算机就·1啊计算机就·1</p>
-                <p class="section4-inner-item-p2">[理论课] 第一节：xxxxx</p>
-                <p class="section4-inner-item-p3">2020 03.09</p>
-            </div>
-            <div class="section4-inner-item">
-                <div class="section4-inner-item-div1">
-                    <div class="section4-inner-item-div1-left">
-                        <img src="" alt="">
-                    </div>
-                    <div>
-                        <p class="section4-inner-item-div1-right-p">两只小猪</p>
-                        <div style="width: 3rem;display: flex;align-items: center;">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                <div class="section4-inner-item">
+                    <div class="section4-inner-item-div1">
+                        <div class="section4-inner-item-div1-left">
+                            <img src="" alt="">
+                        </div>
+                        <div style="flex: 1;">
+                            <p class="section4-inner-item-div1-right-p">两只小猪</p>
+                            <div style="width: 2rem;display: flex;align-items: center;">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                            </div>
                         </div>
                     </div>
+                    <p class="section4-inner-item-p1">
+                        好好好整的好。撒娇就是大家安静经济大数据集就到家好好好整的好。撒娇就是大家安静经济大数据集就到家啊计算机就·1啊计算机就·1</p>
+                    <p class="section4-inner-item-p2">[理论课] 第一节：xxxxx</p>
+                    <p class="section4-inner-item-p3">2020 03.09</p>
                 </div>
-                <p class="section4-inner-item-p1">
-                    好好好整的好。撒娇就是大家安静经济大数据集就到家好好好整的好。撒娇就是大家安静经济大数据集就到家啊计算机就·1啊计算机就·1</p>
-                <p class="section4-inner-item-p2">[理论课] 第一节：xxxxx</p>
-                <p class="section4-inner-item-p3">2020 03.09</p>
-            </div>
-            <div class="section4-inner-item">
-                <div class="section4-inner-item-div1">
-                    <div class="section4-inner-item-div1-left">
-                        <img src="" alt="">
-                    </div>
-                    <div>
-                        <p class="section4-inner-item-div1-right-p">两只小猪</p>
-                        <div style="width: 3rem;display: flex;align-items: center;">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                <div class="section4-inner-item">
+                    <div class="section4-inner-item-div1">
+                        <div class="section4-inner-item-div1-left">
+                            <img src="" alt="">
+                        </div>
+                        <div style="flex: 1;">
+                            <p class="section4-inner-item-div1-right-p">两只小猪</p>
+                            <div style="width: 2rem;display: flex;align-items: center;">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                            </div>
                         </div>
                     </div>
+                    <p class="section4-inner-item-p1">
+                        好好好整的好。撒娇就是大家安静经济大数据集就到家好好好整的好。撒娇就是大家安静经济大数据集就到家啊计算机就·1啊计算机就·1</p>
+                    <p class="section4-inner-item-p2">[理论课] 第一节：xxxxx</p>
+                    <p class="section4-inner-item-p3">2020 03.09</p>
                 </div>
-                <p class="section4-inner-item-p1">
-                    好好好整的好。撒娇就是大家安静经济大数据集就到家好好好整的好。撒娇就是大家安静经济大数据集就到家啊计算机就·1啊计算机就·1</p>
-                <p class="section4-inner-item-p2">[理论课] 第一节：xxxxx</p>
-                <p class="section4-inner-item-p3">2020 03.09</p>
-            </div>
-            <div class="section4-inner-item">
-                <div class="section4-inner-item-div1">
-                    <div class="section4-inner-item-div1-left">
-                        <img src="" alt="">
-                    </div>
-                    <div>
-                        <p class="section4-inner-item-div1-right-p">两只小猪</p>
-                        <div style="width: 3rem;display: flex;align-items: center;">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
-                            <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                <div class="section4-inner-item">
+                    <div class="section4-inner-item-div1">
+                        <div class="section4-inner-item-div1-left">
+                            <img src="" alt="">
+                        </div>
+                        <div style="flex: 1;">
+                            <p class="section4-inner-item-div1-right-p">两只小猪</p>
+                            <div style="width: 2rem;display: flex;align-items: center;">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                                <img src="./img/star.png" class="section4-inner-item-div1-right-img" alt="">
+                            </div>
                         </div>
                     </div>
+                    <p class="section4-inner-item-p1">
+                        好好好整的好。撒娇就是大家安静经济大数据集就到家好好好整的好。撒娇就是大家安静经济大数据集就到家啊计算机就·1啊计算机就·1</p>
+                    <p class="section4-inner-item-p2">[理论课] 第一节：xxxxx</p>
+                    <p class="section4-inner-item-p3">2020 03.09</p>
                 </div>
-                <p class="section4-inner-item-p1">
-                    好好好整的好。撒娇就是大家安静经济大数据集就到家好好好整的好。撒娇就是大家安静经济大数据集就到家啊计算机就·1啊计算机就·1</p>
-                <p class="section4-inner-item-p2">[理论课] 第一节：xxxxx</p>
-                <p class="section4-inner-item-p3">2020 03.09</p>
             </div>
-
         </div>
     </section>
-    <section>
+    <section class="section7">
         <img src="./img/img6.png" style="width: 100%;display: block;" alt="">
     </section>
-    <section class="section6">
-        <div class="section6-inner">
-            <div style="width:40%">
-                <div class="section6-item1">
-                    关于我们
-                </div>
-                <div class="section6-item1-div1">
-                    <span class="section6-item1-div1-span1">为天地立心 为生民立命</span>
-                    <span class="section6-item1-div1-span2">为往圣继绝学
-                        为万事开太平</span>
-                </div>
-            </div>
-            <div style="width: 20%;">
-                <div class="section6-item1">
-                    精品课程
-                </div>
-                <div class="section6-item2-div2">
-                    中医外治学
-                </div>
-                <div class="section6-item2-div3">
-                    中医外治学-实操篇
-                </div>
-            </div>
-            <div style="width: 20%;">
-                <div class="section6-item1">
-                    名师讲堂
-                </div>
-                <div class="section6-item3-div3">
-                    王栋医学博士
-                </div>
-            </div>
-            <div style="width: 20%;">
-                <div class="section6-item1">
-                    联系我们
-                </div>
-                <div class="section6-item4-div4">
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <script src="./js/jq.min.js"></script>
+   <div class="footerComponent"></div>
+  <script>
+      window.onload = function(){
+          web.header('index')
+          web.banner()
+          web.footer()
+      }
+  </script>
 
 </body>
 
