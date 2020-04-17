@@ -40,13 +40,13 @@ let web = {
             default:
                 break;
         }
-        skip = function (type,num) {
-            window.location.href = type + ".html"+num?"?id="+num:""
+        skip = function (type, num) {
+            window.location.href = type + ".html" + (num ? "?id=" + num : "")
         }
-        $('.header-item').hover(function(e) {
+        $('.header-item').hover(function (e) {
             $(this).find("ul").stop();
             $(this).find("ul").slideDown();
-        },function(e) {
+        }, function (e) {
             $(this).find("ul").stop();
             $(this).find("ul").slideUp();
         });
@@ -65,8 +65,8 @@ let web = {
         var mySwiper = new Swiper('.swiper-container', {
             autoplay: true,//可选选项，自动滑动
             loop: true,
-            speed:1000,
-            grabCursor:true,
+            speed: 1000,
+            grabCursor: true,
             autoplay: {
                 delay: 5000,
                 stopOnLastSlide: false,
@@ -96,10 +96,10 @@ let web = {
                                     <div class="section6-item1">\
                                         精品课程\
                                     </div>\
-                                    <div class="section6-item2-div2">\
+                                    <div class="section6-item2-div2" onclick=skipFooter("./course","1")>\
                                         中医外治学\
                                     </div>\
-                                    <div class="section6-item2-div3">\
+                                    <div class="section6-item2-div3" onclick=skipFooter("./course","2")>\
                                         中医外治学-实操篇\
                                     </div>\
                                 </div>\
@@ -107,7 +107,7 @@ let web = {
                                     <div class="section6-item1">\
                                         名师讲堂\
                                     </div>\
-                                    <div class="section6-item3-div3">\
+                                    <div class="section6-item3-div3" style="cursor: pointer;" onclick=skipFooter("./lecturer")>\
                                         王栋医学博士\
                                     </div>\
                                 </div>\
@@ -120,7 +120,10 @@ let web = {
                                 </div>\
                             </div>\
                         </section>'
-        $(".footerComponent").append(footerStr)
+        $(".footerComponent").append(footerStr);
+        skipFooter = function (type, num) {
+            window.location.href = type + ".html" + (num ? "?id=" + num : "")
+        }
     }
 }
 
