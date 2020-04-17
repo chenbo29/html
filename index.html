@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首页</title>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <script src="./js/swiper.min.js"></script>
     <link rel="stylesheet" href="./css/public.css">
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 200px) and (max-device-width: 850px)"
         href="./css/md-public.css">
     <script src="./js/public.js"></script>
     <script src="./js/jq.min.js"></script>
     <script src="./component/Public.js"></script>
-    
+
 </head>
 
 <body>
@@ -219,14 +221,25 @@
     <section class="section7">
         <img src="./img/img6.png" style="width: 100%;display: block;" alt="">
     </section>
-   <div class="footerComponent"></div>
-  <script>
-      window.onload = function(){
-          web.header('index')
-          web.banner()
-          web.footer()
-      }
-  </script>
+    <div class="footerComponent"></div>
+    <script>
+        window.onload = function () {
+            web.header('index')
+            web.banner()
+            web.footer()
+
+            // 监听事件
+            window.addEventListener('scroll', function () {
+                let t = $('body, html').scrollTop();   // 目前监听的是整个body的滚动条距离
+                if (t >= $('.headerComponent').innerHeight()) {
+                    $('.headerComponent').addClass('box-active')
+                } else if(t===0) {
+                    $('.headerComponent').removeClass('box-active')
+                    $('.headerComponent').addClass('box-active2')
+                }
+            })
+        }
+    </script>
 
 </body>
 

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>课程介绍</title>
     <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <script src="./js/swiper.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 200px) and (max-device-width: 850px)"
         href="./css/md-public.css">
     <script src="./js/public.js"></script>
@@ -19,9 +21,10 @@
     <div class="bannerComponent"></div>
 
     <div class="about_content1">
-        <div class="about_content1-left">
+        <div class="about_content1-left course_content1-left">
             <p>课程介绍</p>
-            <p>《中医外治》</p>
+            <p class="p" data-value='1'>《中医外治》</p>
+            <p class="p" data-value='2'>《中医外治学实操》</p>
         </div>
         <div class="about_content1-right">
             <div style="display: flex;justify-content: center;">
@@ -129,6 +132,36 @@
             web.header('course')
             web.banner()
             web.footer()
+            if (getUrlParam('id')) {
+                $(".course_content1-left .p").eq(parseInt(getUrlParam('id') - 1)).addClass("active_p")
+            } else {
+                $(".course_content1-left .p").eq(0).addClass("active_p")
+            }
+
+            $(".course_content1-left .p").click(function () {
+                $(".course_content1-left .p").removeClass("active_p");
+                $(this).addClass("active_p");
+                window.location.href = "./course?id=" + $(this).attr("data-value");
+            })
+            switch (getUrlParam('id')) {
+                case null:
+                case '1':
+                case 1:
+                    document.title = "《中医外治》";
+                    break;
+                case '2':
+                case 2:
+                    document.title = "《中医外治学实操》";
+                    break;
+                default:
+                    document.title = "《中医外治》";
+                    break;
+            }
+            function getUrlParam(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]); return null;
+            }
         }
     </script>
 

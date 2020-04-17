@@ -7,7 +7,8 @@ html {
 
 blockquote, body, button, caption, dd, div, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, hr, html, input, legend, li, menu, ol, p, pre, table, td, textarea, th, ul {
     margin: 0;
-    padding: 0
+    padding: 0;
+    list-style-type: none
 }
 
 body, html {
@@ -36,10 +37,33 @@ body, html {
 .header-item {
     color: #ffffff;
     font-size: 0.24rem;
-    margin-right: 0.36rem;
     display: flex;
     align-items: center;
     cursor: pointer;
+    position: relative;
+    padding: 0 0.16rem;
+    justify-content: center;
+}
+
+.header-item-ul {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    top: 0.8rem;
+    padding: 20px 10px;
+    display: none;
+    background-color: #fff;
+}
+
+.header-item-ul li {
+    color: #000;
+    margin-top: 10px;
+    font-size: 0.14rem;
+}
+
+.header-item-ul li:hover {
+    text-decoration: underline;
+    color: #871725;
 }
 
 .header-item-active {
@@ -232,7 +256,7 @@ body, html {
 }
 
 .section2, .section3, .section4, .section5, .section7 {
-    max-width: 1248px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -340,25 +364,24 @@ body, html {
 .section4-content {
     position: relative;
     background: url(../img/img4.png) no-repeat;
-    background-size: cover;
-    width: 11.83rem;
+    background-size: contain;
+    width: 10.83rem;
     z-index: 2;
     height: 4.59rem;
     top: 2.11rem;
     left: 50%;
-    margin-left: -5.915rem;
+    margin-left: -5.415rem;
 }
 
 .section4-inner {
-    min-width: 720px;
-    width: 10rem;
-    height: 4rem;
+    width: 9.2rem;
+    height: 3.66rem;
     position: absolute;
     left: 50%;
     align-items: center;
     top: 50%;
-    margin-top: -2rem;
-    margin-left: -4.995rem;
+    margin-top: -2.05rem;
+    margin-left: -4.6rem;
     flex-wrap: wrap;
     background-color: #fff;
     display: flex;
@@ -493,7 +516,6 @@ body, html {
     margin-top: 0.14rem;
     position: relative;
     margin-bottom: 0.54rem;
-
 }
 
 .about_content-item-image1 {
@@ -552,10 +574,12 @@ body, html {
 .about_content-item-image3 .bottom {
     margin-top: 0.38rem;
 }
-.about_content-item-image3 .bottom p{
+
+.about_content-item-image3 .bottom p {
     display: flex;
     align-items: center;
 }
+
 .about_content-item-image3 .bottom p .wrap {
     display: inline-block;
     width: 18px;
@@ -586,14 +610,17 @@ body, html {
 }
 
 /* 讲师介绍 */
-.lecturer_ul p{
+
+.lecturer_ul p {
     color: #000;
     font-size: 0.24rem;
 }
-.lecturer_content1_item{
+
+.lecturer_content1_item {
     margin-bottom: 0.3rem;
 }
-.lecturer_iamge_position{
+
+.lecturer_iamge_position {
     width: 0.76rem;
     height: 0.58rem;
     background-color: #a6936b;
@@ -601,6 +628,72 @@ body, html {
     top: 0;
     left: 0;
 }
-.lecturer_image{
+
+.lecturer_image {
     position: relative;
+}
+
+.headerComponent {
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    transition: all 1s;
+}
+
+.box-active {
+    position: fixed;
+    top: 0;
+    opacity: 0.8;
+    /* Opera */
+}
+
+.box-active2 .header-wrap {
+    animation: myfirst 1s;
+}
+
+.box-active .header-wrap {
+    animation: myfirst2 1s;
+}
+
+@keyframes myfirst {
+    from {
+        height: 0;
+    }
+    to {
+        height: 0.92rem;
+    }
+}
+
+@keyframes myfirst2 {
+    from {
+        height: 0;
+    }
+    to {
+        height: 0.92rem;
+    }
+}
+
+.course_content1-left {
+    height: 2.08rem;
+}
+
+.course_content1-left .p {
+    font-size: 0.2rem;
+    color: #000;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.course_content1-left .p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.active_p{
+    text-decoration: underline; 
+    color: rgb(64, 98, 110);
 }

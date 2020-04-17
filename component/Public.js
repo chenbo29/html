@@ -6,7 +6,13 @@ let web = {
                     <p class="header-item" onclick=skip("index")>首页</p>\
                     <p class="header-item" onclick=skip("about")>关于我们</p>\
                     <p class="header-item" onclick=skip("lecturer")>讲师介绍</p>\
-                    <p class="header-item" onclick=skip("course")>课程介绍</p>\
+                    <ul class="header-item" >\
+                        <li style="display:block">课程介绍</li>\
+                        <ul class="header-item-ul">\
+                            <li onclick=skip("course","1")>《中医外治学》</li>\
+                            <li onclick=skip("course","2")>《中医外治学-实操课程》</li>\
+                        </ul>\
+                    </ul>\
                     <p class="header-item" onclick=skip("contactus")>联系我们</p>\
                 </div>\
                 <div class="header-logo">\
@@ -34,15 +40,44 @@ let web = {
             default:
                 break;
         }
-        skip= function (type){
-            window.location.href = type+".html"
+        skip = function (type,num) {
+            window.location.href = type + ".html"+num?"?id="+num:""
         }
+        $('.header-item').hover(function(e) {
+            $(this).find("ul").stop();
+            $(this).find("ul").slideDown();
+        },function(e) {
+            $(this).find("ul").stop();
+            $(this).find("ul").slideUp();
+        });
     },
     banner: function () {
-        let bannerStr = '<section class="section1">\
-            <img src="./img/banner.png" alt="" style="display: block;" />\
-        </section>'
-        $(".bannerComponent").append(bannerStr)
+        let bannerStr = '<div class="swiper-container">\
+        <div class="swiper-wrapper">\
+          <div class="swiper-slide section1"><img src="./img/banner.png" alt="" style="display: block;" /></div>\
+          <div class="swiper-slide section1"><img src="./img/banner2.png" alt="" style="display: block;" /></div>\
+        </div>\
+      </div>'
+        // let bannerStr = '<section class="section1">\
+        //     <img src="./img/banner.png" alt="" style="display: block;" />\
+        // </section>'
+        $(".bannerComponent").append(bannerStr);
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: true,//可选选项，自动滑动
+            loop: true,
+            speed:1000,
+            grabCursor:true,
+            autoplay: {
+                delay: 5000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            },
+        })
+
+        //如果你初始化时没有定义Swiper实例，后面也可以通过Swiper的HTML元素来获取该实例
+        new Swiper('.swiper-container')
+        var mySwiper = document.querySelector('.swiper-container').swiper
+        mySwiper.slideNext();
     },
     footer: function () {
         let footerStr = '<section class="section6">\
