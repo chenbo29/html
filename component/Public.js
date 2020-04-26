@@ -58,32 +58,32 @@ let web = {
         // });
     },
     banner: function () {
-        let bannerStr = '<div class="swiper-container">\
-        <div class="swiper-wrapper">\
-          <div class="swiper-slide section1"><img src="./img/banner.png" alt="" style="display: block;" /></div>\
-          <div class="swiper-slide section1"><img src="./img/banner2.png" alt="" style="display: block;" /></div>\
-        </div>\
-      </div>'
-        // let bannerStr = '<section class="section1">\
-        //     <img src="./img/banner.png" alt="" style="display: block;" />\
-        // </section>'
-        $(".bannerComponent").append(bannerStr);
-        var mySwiper = new Swiper('.swiper-container', {
-            autoplay: true,//可选选项，自动滑动
-            loop: true,
-            speed: 1000,
-            grabCursor: true,
-            autoplay: {
-                delay: 5000,
-                stopOnLastSlide: false,
-                disableOnInteraction: true,
-            },
-        })
+    //     let bannerStr = '<div class="swiper-container">\
+    //     <div class="swiper-wrapper">\
+    //       <div class="swiper-slide section1"><img src="./img/banner.png" alt="" style="display: block;" /></div>\
+    //       <div class="swiper-slide section1"><img src="./img/banner2.png" alt="" style="display: block;" /></div>\
+    //     </div>\
+    //   </div>'
+    //     // let bannerStr = '<section class="section1">\
+    //     //     <img src="./img/banner.png" alt="" style="display: block;" />\
+    //     // </section>'
+    //     $(".bannerComponent").append(bannerStr);
+    //     var mySwiper = new Swiper('.swiper-container', {
+    //         autoplay: true,//可选选项，自动滑动
+    //         loop: true,
+    //         speed: 1000,
+    //         grabCursor: true,
+    //         autoplay: {
+    //             delay: 5000,
+    //             stopOnLastSlide: false,
+    //             disableOnInteraction: true,
+    //         },
+    //     })
 
-        //如果你初始化时没有定义Swiper实例，后面也可以通过Swiper的HTML元素来获取该实例
-        new Swiper('.swiper-container')
-        var mySwiper = document.querySelector('.swiper-container').swiper
-        mySwiper.slideNext();
+    //     //如果你初始化时没有定义Swiper实例，后面也可以通过Swiper的HTML元素来获取该实例
+    //     new Swiper('.swiper-container')
+    //     var mySwiper = document.querySelector('.swiper-container').swiper
+    //     mySwiper.slideNext();
     },
     footer: function () {
         // let footerStr = '<section class="section6">\
