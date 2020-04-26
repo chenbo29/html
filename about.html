@@ -17,7 +17,33 @@
 </head>
 
 <body>
-    <div class="headerComponent"></div>
+    <div class="headerComponent">
+        <header class="header-wrap">
+            <div class="header-wrap-inner">
+                <div class="header-inner">
+                    <p class="header-item" onclick="skip('index')">首页</p>
+                    <p class="header-item" onclick="skip('about')">关于我们</p>
+                    <ul class="header-item">
+                        <li style="display:block" onclick='skip("lecturer","1")'>讲师介绍</li>
+                        <ul class="header-item-ul">
+                            <li onclick='skip("lecturer","1")'>王栋医学博士</li>
+                        </ul>
+                    </ul>
+                    <ul class="header-item">
+                        <li style="display:block">课程介绍</li>
+                        <ul class="header-item-ul">
+                            <li onclick='skip("course","1")'>《中医外治学》</li>
+                            <li onclick='skip("course","2")'>《中医外治学-实操课程》</li>
+                        </ul>
+                    </ul>
+                    <p class="header-item" onclick='skip("contactus")'>联系我们</p>
+                </div>
+                <div class="header-logo">
+                    <img src="./img/img1.png" alt="">
+                </div>
+            </div>
+        </header>
+    </div>
     <div class="bannerComponent"></div>
 
     <div class="about_content1">
@@ -38,7 +64,7 @@
                         <div class="about_content-item-subtitle">
                             古人云：真传一句话，假传万卷书。<br />
                             意思是说，过去师傅要教徒弟真本事，要领往往很简单<br />
-                            ，学生一听就明白了；当师傅不想告诉你时，反而会告<br />诉你很多东西，好像永远学不尽似的。<br/>
+                            ，学生一听就明白了；当师傅不想告诉你时，反而会告<br />诉你很多东西，好像永远学不尽似的。<br />
                             你会问真的是这样吗？中医是这样吗？
                         </div>
                     </div>
@@ -57,7 +83,7 @@
                             痤疮，又叫青春痘，是伴随青春期雄性激素升高，造成面部皮下脂肪堆积，阻<br />
                             碍血液循环，造成局限性毛囊炎。所以治疗，就可以用中药外敷，局部拮抗雄<br />
                             性激素，改善脂代谢，消炎治疗。如：白果（银杏果实，含银杏黄酮，拮抗雄性<br />
-                            激素，美白）90克打粉，每次用隔夜绿茶水或豆浆适量调糊，外敷面部，每<br/>
+                            激素，美白）90克打粉，每次用隔夜绿茶水或豆浆适量调糊，外敷面部，每<br />
                             次半小时，结束后用上海硫磺皂洗净，就可以治疗痤疮。简单吧！
                         </div>
                     </div>
@@ -74,10 +100,10 @@
                         <div class="about_content-item-subtitle">
                             再举个例子：<br />
                             失眠<br />
-                              人体有一对调节人体生物节律神经，交感神经和副交感神经。白天交感神经主
+                            人体有一对调节人体生物节律神经，交感神经和副交感神经。白天交感神经主
                             导，夜间副交感神经主导。二者节律失调，就会失眠。所以，治疗可以通过调
                             节神经的生物节律，恢复正常作息。您想知道外治可以怎么调节吗？我们有免
-                            费的试听课，相信您一听就明白了。 
+                            费的试听课，相信您一听就明白了。
                         </div>
                     </div>
                     <div class="about_content-item-image">
@@ -120,7 +146,7 @@
                                 </div>
                                 <h5>xxx</h5>
                                 <div class="bottom">
-                                    <p >
+                                    <p>
                                         <span class="wrap">
                                             <span></span>
                                         </span>
@@ -140,7 +166,7 @@
                                 </div>
                                 <h5>xxx</h5>
                                 <div class="bottom">
-                                    <p >
+                                    <p>
                                         <span class="wrap">
                                             <span></span>
                                         </span>
@@ -156,12 +182,66 @@
     </div>
 
 
-    <div class="footerComponent"></div>
+    <div class="footerComponent">
+        <section class="section6">
+            <div class="section6-inner">
+                <div style="width:25%">
+                    <div class="section6-item1">
+                        关于我们
+                    </div>
+                    <div class="section6-item1-div1">
+                        <span class="section6-item1-div1-span1">为天地立心 为生民立命</span>
+                        <span class="section6-item1-div1-span2">为往圣继绝学
+                            为万事开太平</span>
+                    </div>
+                </div>
+                <div style="width: 25%;">
+                    <div class="section6-item1">
+                        精品课程
+                    </div>
+                    <div class="section6-item2-div2" onclick='skipFooter("./course","1")'>
+                        中医外治学
+                    </div>
+                    <div class="section6-item2-div3" onclick='skipFooter("./course","2")'>
+                        中医外治学-实操篇
+                    </div>
+                </div>
+                <div style="width: 25%;">
+                    <div class="section6-item1">
+                        名师讲堂
+                    </div>
+                    <div class="section6-item3-div3" style="cursor: pointer;" onclick='skipFooter("./lecturer")'>
+                        王栋医学博士
+                    </div>
+                </div>
+                <div style="width: 25%;">
+                    <div class="section6-item1">
+                        联系我们
+                    </div>
+                    <div class="section6-item4-div4">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <script>
         window.onload = function () {
-            web.header('about')
             web.banner()
             web.footer()
+            $(".headerComponent .header-wrap .header-item").eq(1).addClass("header-item-active")
+            skip = function (type, num) {
+                window.location.href = type + ".html" + (num ? "?id=" + num : "")
+            }
+            $('.header-item').hover(function (e) {
+                // $(this).find("ul").stop();
+                $(this).find("ul").slideDown();
+            }, function (e) {
+                $(this).find("ul").stop();
+                $(this).find("ul").slideUp();
+            });
+            skipFooter = function (type, num) {
+                window.location.href = type + ".html" + (num ? "?id=" + num : "")
+            }
         }
     </script>
 

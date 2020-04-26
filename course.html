@@ -17,7 +17,33 @@
 </head>
 
 <body>
-    <div class="headerComponent"></div>
+    <div class="headerComponent">
+        <header class="header-wrap">
+            <div class="header-wrap-inner">
+                <div class="header-inner">
+                    <p class="header-item" onclick="skip('index')">首页</p>
+                    <p class="header-item" onclick="skip('about')">关于我们</p>
+                    <ul class="header-item">
+                        <li style="display:block" onclick='skip("lecturer","1")'>讲师介绍</li>
+                        <ul class="header-item-ul">
+                            <li onclick='skip("lecturer","1")'>王栋医学博士</li>
+                        </ul>
+                    </ul>
+                    <ul class="header-item">
+                        <li style="display:block">课程介绍</li>
+                        <ul class="header-item-ul">
+                            <li onclick='skip("course","1")'>《中医外治学》</li>
+                            <li onclick='skip("course","2")'>《中医外治学-实操课程》</li>
+                        </ul>
+                    </ul>
+                    <p class="header-item" onclick='skip("contactus")'>联系我们</p>
+                </div>
+                <div class="header-logo">
+                    <img src="./img/img1.png" alt="">
+                </div>
+            </div>
+        </header>
+    </div>
     <div class="bannerComponent"></div>
 
     <div class="about_content1">
@@ -126,12 +152,68 @@
     </div>
 
 
-    <div class="footerComponent"></div>
+    <div class="footerComponent">
+        <section class="section6">
+            <div class="section6-inner">
+                <div style="width:25%">
+                    <div class="section6-item1">
+                        关于我们
+                    </div>
+                    <div class="section6-item1-div1">
+                        <span class="section6-item1-div1-span1">为天地立心 为生民立命</span>
+                        <span class="section6-item1-div1-span2">为往圣继绝学
+                            为万事开太平</span>
+                    </div>
+                </div>
+                <div style="width: 25%;">
+                    <div class="section6-item1">
+                        精品课程
+                    </div>
+                    <div class="section6-item2-div2" onclick='skipFooter("./course","1")'>
+                        中医外治学
+                    </div>
+                    <div class="section6-item2-div3" onclick='skipFooter("./course","2")'>
+                        中医外治学-实操篇
+                    </div>
+                </div>
+                <div style="width: 25%;">
+                    <div class="section6-item1">
+                        名师讲堂
+                    </div>
+                    <div class="section6-item3-div3" style="cursor: pointer;" onclick='skipFooter("./lecturer")'>
+                        王栋医学博士
+                    </div>
+                </div>
+                <div style="width: 25%;">
+                    <div class="section6-item1">
+                        联系我们
+                    </div>
+                    <div class="section6-item4-div4">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <script>
         window.onload = function () {
-            web.header('course')
+            // web.header('course')
             web.banner()
             web.footer()
+
+
+            $(".headerComponent .header-wrap .header-item").eq(3).addClass("header-item-active")
+            skip = function (type, num) {
+                window.location.href = type + ".html" + (num ? "?id=" + num : "")
+            }
+            $('.header-item').hover(function (e) {
+                // $(this).find("ul").stop();
+                $(this).find("ul").slideDown();
+            }, function (e) {
+                $(this).find("ul").stop();
+                $(this).find("ul").slideUp();
+            });
+
+
             if (getUrlParam('id')) {
                 $(".course_content1-left .p").eq(parseInt(getUrlParam('id') - 1)).addClass("active_p")
             } else {
@@ -161,6 +243,9 @@
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
                 var r = window.location.search.substr(1).match(reg);
                 if (r != null) return unescape(r[2]); return null;
+            }
+            skipFooter = function (type, num) {
+                window.location.href = type + ".html" + (num ? "?id=" + num : "")
             }
         }
     </script>

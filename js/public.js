@@ -34,4 +34,17 @@
         false
     );
     refreshRem();
+
+
+
+        // 监听事件
+        window.addEventListener('scroll', function () {
+            let t = $('body, html').scrollTop();   // 目前监听的是整个body的滚动条距离
+            if (t >= $('.headerComponent').innerHeight()) {
+                $('.headerComponent').addClass('box-active')
+            } else if(t===0) {
+                $('.headerComponent').removeClass('box-active')
+                $('.headerComponent').addClass('box-active2')
+            }
+        })
 })(window);

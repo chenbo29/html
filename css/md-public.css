@@ -1,0 +1,40 @@
+@charset "UTF-8";
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent
+}
+
+blockquote, body, button, caption, dd, div, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, hr, html, input, legend, li, menu, ol, p, pre, table, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+.header-top{
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+    padding-top: 0.58rem;
+    overflow: hidden;
+    padding-bottom: 0.27rem;
+}
+.header-top img{
+    display: block;
+    margin: 0 auto;
+}
+.body1{
+    display: flex;
+    justify-content: center;
+}
+.body1-left{
+    position: relative;
+    margin-right: 0.77rem;
+}
+.body1-left-img{
+    margin-left: 1.49rem;
+    margin-top: 0.4rem;
+    display: block;
+}
+.body-text p{ 
+    color: #000;
+    font-size: 0.2rem;
+}
