@@ -31,10 +31,7 @@
                     </ul>
                     <ul class="header-item">
                         <li style="display:block" onclick='skip("course","1")'>课程介绍</li>
-                        <ul class="header-item-ul">
-                            <li onclick='skip("course","1")'>《中医外治学》</li>
-                            <li onclick='skip("course","2")'>《中医外治学-实操课程》</li>
-                        </ul>
+                        <ul class="header-item-ul courseUl"></ul>
                     </ul>
                     <p class="header-item" onclick='skip("contactus")'>联系我们</p>
                 </div>
@@ -297,6 +294,8 @@
         </section>
     </div>
     <script>
+        let data='[{"id":1,"name":"课程-中医治学外传"},{"id":2,"name":"课程-中医治学"}]';
+        
         window.onload = function () {
             // web.header('index')
             // web.banner()
@@ -335,7 +334,7 @@
             mySwiper.slideNext();
         }
     </script>
-
+    <script src="./component/Render.js"></script>
 </body>
 
 </html>

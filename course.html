@@ -31,9 +31,7 @@
                     </ul>
                     <ul class="header-item">
                         <li style="display:block" onclick='skip("course","1")'>课程介绍</li>
-                        <ul class="header-item-ul">
-                            <li onclick='skip("course","1")'>《中医外治学》</li>
-                            <li onclick='skip("course","2")'>《中医外治学-实操课程》</li>
+                        <ul class="header-item-ul courseUl">
                         </ul>
                     </ul>
                     <p class="header-item" onclick='skip("contactus")'>联系我们</p>
@@ -55,10 +53,7 @@
     </div>
 
     <div class="about_content1">
-        <div class="about_content1-left course_content1-left">
-            <p>课程介绍</p>
-            <p class="p" data-value='1'>《中医外治》</p>
-            <p class="p" data-value='2'>《中医外治学实操》</p>
+        <div class="about_content1-left course_content1-left course_content1_content">
         </div>
         <div class="about_content1-right">
             <div style="display: flex;justify-content: center;">
@@ -203,12 +198,12 @@
         </section>
     </div>
     <script>
+        let data = '[{"id":1,"name":"课程-中医治学外传"},{"id":2,"name":"课程-中医治学"}]';
         window.onload = function () {
             // web.header('course')
+            let isSelect = JSON.parse(data).filter(item => item.id == getUrlParam('id'))
             web.banner()
             web.footer()
-
-
             $(".headerComponent .header-wrap .header-item").eq(3).addClass("header-item-active")
             skip = function (type, num) {
                 window.location.href = type + ".html" + (num ? "?id=" + num : "")
@@ -221,32 +216,34 @@
                 $(this).find("ul").slideUp();
             });
 
+            
+            // if (getUrlParam('id')) {
+            //     $(".course_content1-left .p").eq(parseInt(getUrlParam('id') - 1)).addClass("active_p")
+            // } else {
+            //     $(".course_content1-left .p").eq(0).addClass("active_p")
+            // }
 
-            if (getUrlParam('id')) {
-                $(".course_content1-left .p").eq(parseInt(getUrlParam('id') - 1)).addClass("active_p")
-            } else {
-                $(".course_content1-left .p").eq(0).addClass("active_p")
+
+            // 课程
+            let courseUlData_left = '';
+            courseUlData_left+="<p>课程介绍</p>";
+            JSON.parse(data).map((item, key) => {
+                courseUlData_left += '<p class="p act'+item.id+'" data-value='+item.id+'>'+item.name+'</p>'
+            })
+            $(".course_content1_content").append(courseUlData_left)
+
+            if (isSelect && isSelect.length > 0 && isSelect[0]) {
+                document.title = isSelect[0]['name'];
+                // console.log( $(".course_content1-left .act"+isSelect[0]['id']+"").attr('class') )
+                $(".course_content1-left .act"+isSelect[0]['id']).addClass("active_p")
             }
 
             $(".course_content1-left .p").click(function () {
                 $(".course_content1-left .p").removeClass("active_p");
                 $(this).addClass("active_p");
                 window.location.href = "./course?id=" + $(this).attr("data-value");
-            })
-            switch (getUrlParam('id')) {
-                case null:
-                case '1':
-                case 1:
-                    document.title = "《中医外治》";
-                    break;
-                case '2':
-                case 2:
-                    document.title = "《中医外治学实操》";
-                    break;
-                default:
-                    document.title = "《中医外治》";
-                    break;
-            }
+            }) 
+
             function getUrlParam(name) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
                 var r = window.location.search.substr(1).match(reg);
@@ -255,9 +252,9 @@
             skipFooter = function (type, num) {
                 window.location.href = type + ".html" + (num ? "?id=" + num : "")
             }
-              // 轮播tu
+            // 轮播tu
 
-              var mySwiper = new Swiper('.swiper-container', {
+            var mySwiper = new Swiper('.swiper-container', {
                 autoplay: true,//可选选项，自动滑动
                 loop: true,
                 speed: 1000,
@@ -275,6 +272,7 @@
             mySwiper.slideNext();
         }
     </script>
+    <script src="./component/Render.js"></script>
 
 </body>
 

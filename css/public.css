@@ -500,7 +500,8 @@ body, html {
 
 .about_content1-left p:nth-of-type(2) {
     font-size: 0.2rem;
-    color: rgb(64, 98, 110);
+    color: #000;
+    /* color: rgb(64, 98, 110); */
     background-color: #fff;
     width: 100%;
     text-align: center;
@@ -715,6 +716,8 @@ body, html {
 .course_content1-left .p {
     font-size: 0.2rem;
     color: #000;
+    /* color: rgb(64, 98, 110); */
+
     background-color: #fff;
     width: 100%;
     text-align: center;
@@ -730,5 +733,5 @@ body, html {
 }
 .active_p{
     /* text-decoration: underline;  */
-    color: rgb(64, 98, 110);
+    color: rgb(64, 98, 110) !important;
 }
